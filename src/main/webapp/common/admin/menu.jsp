@@ -51,9 +51,9 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href='<c:url value="/admin/device/list?page=1&maxPageItem=10"/>'>
+                    <a href='<c:url value="/api/admin/student/?page=1&maxPageItem=10"/>'>
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Danh Sách Thiết Bị
+                        Danh Sách Sinh viên
                     </a>
                     <b class="arrow"></b>
                 </li>

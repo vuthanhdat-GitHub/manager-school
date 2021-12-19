@@ -1,7 +1,5 @@
 package com.dangvandat.dto;
 
-import com.dangvandat.dto.response.ProductResponse;
-
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +15,6 @@ public class AbstractDTO<T> {
     private int page;
     private String action;
     private List<T> listResult = new ArrayList<T>();
-    private List<ProductResponse> productResponseList = new ArrayList<ProductResponse>();
     private Long[] ids;
     private Integer totalItems = 0;
     private Integer totalPage = 0;
@@ -108,12 +105,6 @@ public class AbstractDTO<T> {
     }
     public void setSortBy(String sortBy) {
         this.sortBy = sortBy;
-    }
-    public List<ProductResponse> getProductResponseList() {
-        return productResponseList;
-    }
-    public void setProductResponseList(List<ProductResponse> productResponseList) {
-        this.productResponseList = productResponseList;
     }
     public String getBase64OfServer() {
         return base64OfServer;

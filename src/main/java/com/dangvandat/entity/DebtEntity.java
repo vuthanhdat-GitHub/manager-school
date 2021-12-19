@@ -10,7 +10,7 @@ import java.util.Date;
 @Table(name = "debt")
 @Getter
 @Setter
-public class DebtEntity {
+public class DebtEntity extends BaseEntity {
 
     @Column(name = "tuition")
     private Float tuition;
@@ -20,14 +20,4 @@ public class DebtEntity {
 
     @Column(name = "status")
     private String status;
-
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "id")
-    private StudentEntity studentEntity;
-
-    @OneToOne(orphanRemoval = true)
-    @JoinColumn(name = "id_id")
-    private StudentEntity id;
-
 }

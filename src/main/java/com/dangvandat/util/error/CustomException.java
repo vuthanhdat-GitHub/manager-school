@@ -1,6 +1,6 @@
 package com.dangvandat.util.error;
 
-import com.dangvandat.contant.Constants;
+import com.dangvandat.constants.Constants;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 package com.dangvandat.service.impl;
 
-import com.dangvandat.contant.SystemContant;
+import com.dangvandat.constants.AppConstant;
 import com.dangvandat.dto.UserProfile;
 import com.dangvandat.entity.RoleEntity;
 import com.dangvandat.entity.UserEntity;
@@ -24,7 +24,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity userEntity = userRepository.findOneByUserNameAndStatus(username , SystemContant.ACTIVE_STAUTS);
+        UserEntity userEntity = userRepository.findOneByUserNameAndStatus(username , AppConstant.ACTIVE.ACTIVE_STATUS);
         if(userEntity == null){
             throw new UsernameNotFoundException("User Not Found");
         }

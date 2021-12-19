@@ -3,6 +3,9 @@
     <persistence-unit name="persistence-data">
         <class>com.dangvandat.entity.UserEntity</class>
         <class>com.dangvandat.entity.RoleEntity</class>
-        <class>com.dangvandat.entity.ProductsEntity</class>
+        <class>com.dangvandat.entity.ClasszEntity</class>
+        <class>com.dangvandat.entity.DebtEntity</class>
+        <class>com.dangvandat.entity.StudentEntity</class>
+        <class>com.dangvandat.entity.FileEntity</class>
     </persistence-unit>
 </persistence>

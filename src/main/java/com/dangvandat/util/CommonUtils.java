@@ -1,6 +1,6 @@
 package com.dangvandat.util;
 
-import com.dangvandat.contant.Constants;
+import com.dangvandat.constants.Constants;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;

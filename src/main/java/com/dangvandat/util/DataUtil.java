@@ -15,28 +15,4 @@ public class DataUtil {
         });
         return result;
     }
-
-    public static Map<String, String> getProductStatus() {
-        Map<String, String> results = new HashMap<>();
-        Stream.of(ProductStatus.values()).forEach(item -> {
-            results.put(item.name(), item.getValue());
-        });
-        return results;
-    }
-
-    public static Map<String, String> getIntroductionType() {
-        Map<String, String> results = new HashMap<>();
-        Stream.of(IntroductionType.values()).forEach(item -> {
-            results.put(item.name(), item.getValue());
-        });
-        return results;
-    }
-
-    public static Map<String, String> getCodeNews() {
-        Map<String, String> results = new HashMap<>();
-        Stream.of(CodeNews.values()).forEach(item -> {
-            results.put(item.name(), item.getValue());
-        });
-        return results;
-    }
 }

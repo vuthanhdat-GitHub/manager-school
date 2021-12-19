@@ -12,8 +12,8 @@
     <div class="footer-inner">
         <div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">THANGTAM</span>
-							Application &copy; 11-04-1990
+							<span class="blue bolder">QLHS</span>
+							Application &copy; 01-12-2021
 						</span>
 
             &nbsp; &nbsp;

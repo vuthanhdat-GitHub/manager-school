@@ -10,12 +10,7 @@ import java.util.Date;
 @Table(name = "students")
 @Getter
 @Setter
-public class StudentEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
+public class StudentEntity extends BaseEntity{
 
     @Column(name = "name")
     private String name;
@@ -36,14 +31,14 @@ public class StudentEntity {
     private String idcode;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "student_classz")
     private ClasszEntity classzEntity;
 
-    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @OneToOne
+    @JoinColumn(name = "debt_id")
     private DebtEntity debtEntity;
 
-    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @OneToOne
+    @JoinColumn(name = "file_id")
     private FileEntity fileEntity;
 }

@@ -10,11 +10,11 @@ import java.util.List;
 @Table(name = "classz")
 @Getter
 @Setter
-public class ClasszEntity {
+public class ClasszEntity extends BaseEntity {
 
     @Column(name = "classz_name")
     private String classzname;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "classzEntity", fetch = FetchType.LAZY)
     private List<StudentEntity> studentEntities;
 }
