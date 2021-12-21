@@ -7,7 +7,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="/common/taglib.jsp" %>
+<%@ include file="/common/taglib.jsp" %>
 <%--<c:url var="deviceAPIUpdateStatus" value="/api/admin/device"/>--%>
 <c:url var="studentAPIDelete" value="/api/admin/student"/>
 <c:url var="studentSearchURL" value="/api/admin/student"/>
@@ -87,7 +87,7 @@
                                    class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
                                    data-toggle="tooltip"
                                    title="Add PriceLevel"
-                                   href="<c:url value="/api/admin/student"/>">
+                                   href="<c:url value="/admin/student/edit"/>">
                                     <span>
                                         <i class="fa fa-plus-circle bigger-110 purple"></i>
                                     </span>
@@ -135,7 +135,7 @@
                                     <a class="btn btn-xs btn-primary btn-edit"
                                        data-toggle="tooltip"
                                        title="Update Device"
-                                       href="<c:url value="/api/admin/student?id=${item.id}"/>">
+                                       href="<c:url value="/admin/student?id=${item.id}"/>">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </a>
                                 </td>

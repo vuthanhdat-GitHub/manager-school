@@ -15,4 +15,5 @@ public interface StudentService {
     List<StudentDTO> findAll();
     StudentDTO update(Long id, StudentDTO update);
     void delete(List<Long> ids);
+    StudentDTO findOne(Long id);
 }

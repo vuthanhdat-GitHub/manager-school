@@ -47,6 +47,15 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public StudentDTO findOne(Long id) {
+        StudentEntity entity = studentRepository.findOne(id);
+        if (Objects.isNull(entity)) {
+            throw new CustomException("STUDENT NOT FOUNT" , CommonUtils.putError("StudentEntity" , ""));
+        }
+        return Converter.toModel(entity , StudentDTO.class);
+    }
+
+    @Override
     @Transactional
     public StudentDTO update(Long id, StudentDTO update) {
         update.setId(id);

@@ -9,7 +9,7 @@
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
 <c:url var="studentAPICreate" value="/api/admin/student"/>
-<c:url var="studentListURL" value="/api/admin/student"/>
+<c:url var="studentListURL" value="/admin/student"/>
 <c:url var="studentAPIUpdate" value="/api/admin/student"/>
 <c:url var="studentAPIDelete" value="/api/admin/student"/>
 <!DOCTYPE html>
