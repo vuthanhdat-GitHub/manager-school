@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
-@Controller(value = "studentController")
+@Controller
 public class StudentController {
 
     @Autowired

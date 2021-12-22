@@ -1,4 +1,8 @@
 package com.dangvandat.service.impl;
 
-public class DebtServiceImpl {
+import com.dangvandat.service.DebtService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class DebtServiceImpl implements DebtService {
 }

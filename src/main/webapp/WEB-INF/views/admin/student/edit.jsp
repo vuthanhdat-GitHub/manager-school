@@ -63,9 +63,9 @@
                                                 <label><b>Fullname: </b></label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control input-sm" id="fullname"
-                                                       name="fullname"
-                                                       value="${studentDTO.fullname}"/>
+                                                <input type="text" class="form-control input-sm" id="name"
+                                                       name="name"
+                                                       value="${studentDTO.name}"/>
                                             </div>
                                         </div>
 
@@ -76,8 +76,8 @@
                                                 <label><b>Lớp: </b></label>
                                             </div>
                                             <div class="col-sm-3">
-                                                <input type="text" class="form-control input-sm" id="id_classz"
-                                                       name="id_classz"
+                                                <input type="text" class="form-control input-sm" id="idclassz"
+                                                       name="idclassz"
                                                        value="${studentDTO.idclassz}"/>
                                             </div>
                                         </div>
@@ -102,10 +102,10 @@
                                                 <label><b>Giới tính: </b></label>
                                             </div>
                                             <div class="col-sm-3">
-                                                <select name="type">
+                                                <select id="gender">
                                                     <option value="">--Chọn giới tính--</option>
-                                                    <option value="MINUTE">Nam</option>
-                                                    <option value="TRAIL">Nữ</option>
+                                                    <option value="Nam">Nam</option>
+                                                    <option value="Nữ">Nữ</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -117,8 +117,8 @@
                                                 <label><b>Số điện thoại: </b></label>
                                             </div>
                                             <div class="col-sm-3">
-                                                <input type="text" class="form-control input-sm" id="number_phone"
-                                                       name="number_phone"
+                                                <input type="text" class="form-control input-sm" id="numberphone"
+                                                       name="numberphone"
                                                        value="${studentDTO.numberphone}"/>
                                             </div>
                                         </div>
@@ -130,8 +130,8 @@
                                                 <label><b>Số CCCD: </b></label>
                                             </div>
                                             <div class="col-sm-3">
-                                                <input type="text" class="form-control input-sm" id="id_code"
-                                                       name="id_code"
+                                                <input type="text" class="form-control input-sm" id="idcode"
+                                                       name="idcode"
                                                        value="${studentDTO.idcode}"/>
                                             </div>
                                         </div>

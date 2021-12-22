@@ -45,13 +45,13 @@
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-desktop"></i>
                 <span class="menu-text"></span>
-                Quản lý Thiết Bị
+                Quản lý Sinh viên
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href='<c:url value="/api/admin/student/?page=1&maxPageItem=10"/>'>
+                    <a href='<c:url value="/admin/student?page=1&maxPageItem=10"/>'>
                         <i class="menu-icon fa fa-caret-right"></i>
                         Danh Sách Sinh viên
                     </a>

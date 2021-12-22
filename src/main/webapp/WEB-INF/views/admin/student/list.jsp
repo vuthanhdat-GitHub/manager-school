@@ -8,7 +8,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ include file="/common/taglib.jsp" %>
-<%--<c:url var="deviceAPIUpdateStatus" value="/api/admin/device"/>--%>
 <c:url var="studentAPIDelete" value="/api/admin/student"/>
 <c:url var="studentSearchURL" value="/api/admin/student"/>
 <html>
@@ -86,7 +85,7 @@
                                 <a flag="info"
                                    class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
                                    data-toggle="tooltip"
-                                   title="Add PriceLevel"
+                                   title="Add Student"
                                    href="<c:url value="/admin/student/edit"/>">
                                     <span>
                                         <i class="fa fa-plus-circle bigger-110 purple"></i>
@@ -126,7 +125,7 @@
                         <c:forEach var="item" items="${list.list}" varStatus="loop">
                             <tr>
                                 <td><input type="checkbox" value="${item.id}" name="" id="checkBox_${item.id}"></td>
-                                <td>${item.fullname}</td>
+                                <td>${item.name}</td>
                                 <td>${item.idclassz}</td>
                                 <td>${item.birthday}</td>
                                 <td>${item.gender}</td>
