@@ -35,7 +35,7 @@
         <div class="page-content">
             <div class="row">
                 <form:form class="col-xs-12" action="${studentSearchURL}" id="formSubmit" method="get"
-                          >
+                >
                     <div class="widget-box table-filter">
                         <div class="widget-header">
                             <h4 class="widget-title">
@@ -52,8 +52,8 @@
                                         <div class="col-sm-6">
                                             <label><b>Họ tên: </b></label>
                                             <div class="fg-line">
-                                                <input type="text" class="form-control input-sm" name="fullname"
-                                                       />
+                                                <input type="text" class="form-control input-sm" name="name"
+                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -78,6 +78,7 @@
                     <input type="hidden" value="" id="sortName" name="sortName"/>
                     <input type="hidden" value="" id="sortBy" name="sortBy"/>
                 </form:form>
+
                 <div class="col-xs-12">
                     <div class="table-btn-controls">
                         <div class="pull-right tableTools-container">
@@ -94,7 +95,7 @@
                                 <button type="button" id="btnDelete"
                                         class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
                                         data-toggle="tooltip"
-                                        title="Turn Off The Device"
+                                        title="DELETE STUDENT"
                                 >
                                 <span>
                                     <i class="fa fa-trash-o bigger-110 pink"></i>
@@ -110,16 +111,16 @@
                 <div class="col-xs-12">
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
-                                <th></th>
-                                <th>Họ tên</th>
-                                <th>Lớp</th>
-                                <th>Ngày sinh</th>
-                                <th>Giới tính</th>
-                                <th>Số điện thoại</th>
-                                <th>Số CCCD</th>
-                                <th></th>
-                            </tr>
+                        <tr>
+                            <th></th>
+                            <th>Họ tên</th>
+                            <th>Lớp</th>
+                            <th>Ngày sinh</th>
+                            <th>Giới tính</th>
+                            <th>Số điện thoại</th>
+                            <th>Số CCCD</th>
+                            <th></th>
+                        </tr>
                         </thead>
                         <tbody>
                         <c:forEach var="item" items="${list.list}" varStatus="loop">
@@ -130,11 +131,12 @@
                                 <td>${item.birthday}</td>
                                 <td>${item.gender}</td>
                                 <td>${item.numberphone}</td>
+                                <td>${item.idcode}</td>
                                 <td>
                                     <a class="btn btn-xs btn-primary btn-edit"
                                        data-toggle="tooltip"
-                                       title="Update Device"
-                                       href="<c:url value="/admin/student?id=${item.id}"/>">
+                                       title="Update Student"
+                                       href="<c:url value="/admin/student/edit?id=${item.id}"/>">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </a>
                                 </td>
@@ -161,7 +163,7 @@
 </div>
 
 <!-- Modal confirm delete -->
-<div class="modal fade" id="confirmDeleteBanner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="confirmDeleteStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -176,7 +178,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeModal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="confirmDeleteBanner(true)">Save changes
+                <button type="button" class="btn btn-primary" onclick="confirmDeleteStudent(true)">Save changes
                 </button>
             </div>
         </div>
@@ -234,7 +236,7 @@
             $("#errorDelete").modal('show');
             return;
         }
-        $("#confirmDeleteBanner").modal("show");
+        $("#confirmDeleteStudent").modal("show");
     });
 
     function confirmDeleteStudent(isSubmit) {
@@ -250,9 +252,9 @@
 
     function deleteStudent(data) {
         let url = '${studentAPIDelete}' + '?ids=' + $.each(data, function (index, value) {
-            if (index < data.length){
+            if (index < data.length) {
                 $("#" + index).append(document.createTextNode(value + ","))
-            }else{
+            } else {
                 $("#" + index).append(document.createTextNode(value))
             }
         });
@@ -260,7 +262,7 @@
             url: url,
             type: 'DELETE',
             success: function (data) {
-                window.location.href = "${studentSearchURL}?message=delete_success&page=1&pageSize=10";
+                window.location.href = "${studentAPIDelete}?message=delete_success&page=1&pageSize=10";
             },
             error: function (data) {
                 $("#closeModal").click();

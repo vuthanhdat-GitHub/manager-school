@@ -89,7 +89,7 @@
                                                 <label><b>Ngày sinh: </b></label>
                                             </div>
                                             <div class="col-sm-3">
-                                                <input type="text" class="form-control input-sm" id="birthday"
+                                                <input type="date" class="form-control input-sm" id="birthday"
                                                        name="birthday"
                                                        value="${studentDTO.birthday}"/>
                                             </div>
@@ -102,7 +102,7 @@
                                                 <label><b>Giới tính: </b></label>
                                             </div>
                                             <div class="col-sm-3">
-                                                <select id="gender">
+                                                <select type="text" id="gender" name="gender">
                                                     <option value="">--Chọn giới tính--</option>
                                                     <option value="Nam">Nam</option>
                                                     <option value="Nữ">Nữ</option>
@@ -180,11 +180,7 @@
         var data = {};
 
         $.each(formData, function (index, v) {
-            if (v.name == 'type') {
-                data['' + v.name + ''] = v.value;
-            } else {
-                data['' + v.name + ''] = (Number(v.value));
-            }
+            data['' + v.name + ''] = v.value;
         });
         debugger;
         if (id == '') {

@@ -3,7 +3,6 @@ package com.dangvandat.service.impl;
 import com.dangvandat.builder.StudentBuilder;
 import com.dangvandat.converter.Converter;
 import com.dangvandat.dto.StudentDTO;
-import com.dangvandat.dto.input.StudentInsertInput;
 import com.dangvandat.entity.StudentEntity;
 import com.dangvandat.repository.StudentRepository;
 import com.dangvandat.service.StudentService;
@@ -82,11 +81,21 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public PageList<StudentDTO> findAllStudent(Pageable pageable) {
-        return null;
+        PageList<StudentDTO> result = new PageList<>();
+        List<StudentDTO> priceLevels = Converter.toList(studentRepository.findAll(), StudentDTO.class);
+        result.setList(priceLevels);
+        Long count = studentRepository.count();
+        result.setTotal(count);
+        result.setCurrentPage(pageable.getPageNumber() + 1);
+        result.setPageSize(pageable.getPageSize());
+        result.setSuccess(true);
+        result.setTotalPage((int) Math.ceil((double) Integer.parseInt(count.toString()) / pageable.getPageSize()));
+        return result;
     }
 
     @Override
     public List<StudentDTO> findAll() {
-        return null;
+        List<StudentDTO> studentDTOS = Converter.toList(studentRepository.findAll(), StudentDTO.class);
+        return studentDTOS;
     }
 }

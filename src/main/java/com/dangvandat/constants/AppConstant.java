@@ -76,7 +76,7 @@ public interface AppConstant {
             String SAVE_SUCCESS = "SAVE STUDENT SUCCESSFULLY";
             String DELETE_SUCCESS = "DELETE STUDENT SUCCESSFULLY";
             String FIND_SUCCESS = "FIND STUDENT SUCCESSFULLY";
-            String  UPDATE_SUCCESS = "UPDATE STUDENT SUCCESSFULLY";
+            String UPDATE_SUCCESS = "UPDATE STUDENT SUCCESSFULLY";
         }
         interface user {
             String SAVE_USER_SUCCESS = "SAVE USER SUCCESS";

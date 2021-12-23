@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -24,8 +25,7 @@ public class StudentController {
     public ModelAndView listPageStudent(@RequestParam Map<String, String> model){
         ModelAndView modelAndView = new ModelAndView("admin/student/list");
         Pageable pageable = FormUtil.toPageable(model);
-        PageList<StudentDTO> result = null;
-        result = studentService.findAllStudent(pageable);
+        PageList<StudentDTO> result = studentService.findAllStudent(pageable);
         modelAndView.addObject("list", result);
         return modelAndView;
     }
