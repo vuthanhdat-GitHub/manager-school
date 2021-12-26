@@ -70,13 +70,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public void delete(List<Long> ids) {
-        for(Long id: ids){
-            StudentEntity studentEntity = studentRepository.findOne(id);
-            if(Objects.isNull(studentEntity)){
-                throw new CustomException("STUDENT IS NULL", CommonUtils.putError("studentId", "ERR_0034"));
-            }
-            studentRepository.save(studentEntity);
-        }
+        ids.forEach(studentRepository::delete);
     }
 
     @Override

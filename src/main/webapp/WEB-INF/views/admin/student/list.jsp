@@ -262,7 +262,7 @@
             url: url,
             type: 'DELETE',
             success: function (data) {
-                window.location.href = "${studentAPIDelete}?message=delete_success&page=1&pageSize=10";
+                window.location.href = "${studentListURL}?message=delete_success&page=1&pageSize=10";
             },
             error: function (data) {
                 $("#closeModal").click();
