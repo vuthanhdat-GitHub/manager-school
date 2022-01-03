@@ -9,7 +9,7 @@
          pageEncoding="UTF-8" %>
 <%@ include file="/common/taglib.jsp" %>
 <c:url var="studentAPIDelete" value="/api/admin/student"/>
-<c:url var="studentSearchURL" value="/api/admin/student"/>
+<c:url var="studentSearchURL" value="/admin/student"/>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -34,8 +34,7 @@
         </div>
         <div class="page-content">
             <div class="row">
-                <form:form class="col-xs-12" action="${studentSearchURL}" id="formSubmit" method="get"
-                >
+                <form:form class="col-xs-12" action="${studentSearchURL}" id="formSubmit" method="get">
                     <div class="widget-box table-filter">
                         <div class="widget-header">
                             <h4 class="widget-title">
@@ -45,15 +44,15 @@
                                 <a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
                             </div>
                         </div>
+
                         <div class="widget-body">
                             <div class="widget-main">
                                 <div class="form-horizontal">
                                     <div class="form-group">
                                         <div class="col-sm-6">
-                                            <label><b>Họ tên: </b></label>
+                                            <label><b>Mã sinh viên: </b></label>
                                             <div class="fg-line">
-                                                <input type="text" class="form-control input-sm" name="name"
-                                                />
+                                                <input type="text" class="form-control input-sm" name="id"/>
                                             </div>
                                         </div>
                                     </div>
@@ -105,7 +104,6 @@
                         </div>
                     </div>
                 </div>
-                <%-- button add , delete--%>
             </div>
             <div class="row">
                 <div class="col-xs-12">
@@ -113,6 +111,7 @@
                         <thead>
                         <tr>
                             <th></th>
+                            <th>Mã sinh viên</th>
                             <th>Họ tên</th>
                             <th>Lớp</th>
                             <th>Ngày sinh</th>
@@ -126,6 +125,7 @@
                         <c:forEach var="item" items="${list.list}" varStatus="loop">
                             <tr>
                                 <td><input type="checkbox" value="${item.id}" name="" id="checkBox_${item.id}"></td>
+                                <td>${item.id}</td>
                                 <td>${item.name}</td>
                                 <td>${item.idclassz}</td>
                                 <td>${item.birthday}</td>
@@ -216,17 +216,15 @@
         $('#maxPageItem').val(10);
         $('#sortName').val('id');
         $('#sortBy').val('ASC');
-        $("input[name='price']").val('');
+        $("input[name='id']").val('');
         $('#formSubmit').submit();
     });
-
 
     function showImage(base64File, typeFile) {
         var img = "/images" + base64File;
         $("#show-img").attr('src', img);
         $("#imgmodal").modal('show');
     }
-
 
     $('#btnDelete').click(function () {
         var dataArr = $('tbody input[type=checkbox]:checked').map(function () {
@@ -295,7 +293,6 @@
             }
         });
     });
-
 </script>
 </body>
 </html>

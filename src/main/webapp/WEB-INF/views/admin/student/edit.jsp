@@ -55,6 +55,18 @@
                             <div class="widget-body">
                                 <div class="widget-main">
                                     <div class="form-horizontal">
+                                        <%-- id --%>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-3">
+                                                <label><b>Mã sinh viên: </b></label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control input-sm" id="id"
+                                                       name="id"
+                                                       value="${studentDTO.id}"/>
+                                            </div>
+                                        </div>
 
                                         <%-- fullname --%>
 
