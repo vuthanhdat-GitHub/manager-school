@@ -49,9 +49,9 @@ public class JPAConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://112.213.87.159:5432/qlhs?useSSL=false");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres?useSSL=false");
         dataSource.setUsername("postgres");
-        dataSource.setPassword("1234");
+        dataSource.setPassword("$1234");
         return dataSource;
     }
 
